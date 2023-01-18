@@ -21,10 +21,10 @@
       <tr>City: {{weather.name}}</tr>
       <tr>Country: {{weather.sys.country}}</tr>
       <tr>Weather at all: {{weather.weather[0].main}}</tr>
-      <tr>Temperature: {{weather.main.temp-273.15}} C</tr>
-      <tr>Feels like: {{weather.main.feels_like-273.15}} C</tr>
-      <tr>Min. temperature: {{weather.main.temp_min-273.15}} C</tr>
-      <tr>Max. temperature: {{weather.main.temp_max-273.15}} C</tr>
+      <tr>Temperature: {{(weather.main.temp-273.15).toFixed(2)}} C</tr>
+      <tr>Feels like: {{(weather.main.feels_like-273.15).toFixed(2)}} C</tr>
+      <tr>Min. temperature: {{(weather.main.temp_min-273.15).toFixed(2)}} C</tr>
+      <tr>Max. temperature: {{(weather.main.temp_max-273.15).toFixed(2)}} C</tr>
       <tr>Pressure: {{weather.main.pressure}} P</tr>
       <tr>Wind speed: {{weather.wind.speed}}</tr>
     </table>
@@ -87,6 +87,7 @@ export default {
         localStorage.setItem("wcities",JSON.stringify(this.wcities))
       },
     },
+
 }
 </script>
 <style scoped>
